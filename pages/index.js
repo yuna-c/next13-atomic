@@ -25,6 +25,9 @@ export default function Home({ meals }) {
           ducimus, magni quo dolorum itaque!
         </Text>
         <Text>안녕하세요.</Text>
+        <Text tagName={"h3"} url={"/gallery"}>
+          갤러리 ㄱㄱ
+        </Text>
       </main>
     </>
   );
