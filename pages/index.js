@@ -14,7 +14,7 @@ export default function Home({ meals }) {
         <title>Main Page</title>
       </Head>
 
-      <main className={styles.main}>
+      <main className={clsx(styles.main)}>
         <h1>Main page</h1>
         {mealsData.map((item, idx) => {
           // if (0 === idx % 2) {
