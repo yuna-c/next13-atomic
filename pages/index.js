@@ -1,9 +1,10 @@
 import Head from "next/head";
 import axios from "axios";
 import Image from "next/image";
-import Pic from "@/components/pic/Pic";
+import Pic from "@/components/atoms/pic/Pic";
 import styles from "./Home.module.scss";
 import clsx from "clsx";
+import Text from "@/components/atoms/text/Text";
 
 export default function Home({ meals }) {
   console.log("ssg", meals);
@@ -16,29 +17,14 @@ export default function Home({ meals }) {
 
       <main className={clsx(styles.main)}>
         <h1>Main page</h1>
-        {mealsData.map((item, idx) => {
-          // if (0 === idx % 2) {
-          //   return (
-          //     <div key={item.idMeal}>
-          //       <div className={clsx(styles.bg)}>
-          //         <Pic imgSrc={item.strMealThumb} />
-          //       </div>
-          //     </div>
-          //   );
-          // } else {
-          return (
-            <div key={item.idMeal}>
-              <div className={clsx(styles.bg)}>
-                <Pic
-                  imgSrc={item.strMealThumb}
-                  imgTxt={item.strMeal}
-                  url={"/gallery"}
-                />
-              </div>
-            </div>
-          );
-          // }
-        })}
+        <Text tagName={"h1"}>Hello</Text>
+        <Text tagName={"p"}>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+          fugiat tenetur, voluptate quia nulla distinctio quaerat aliquam
+          eligendi blanditiis repellendus placeat atque, veritatis optio culpa
+          ducimus, magni quo dolorum itaque!
+        </Text>
+        <Text>안녕하세요.</Text>
       </main>
     </>
   );
