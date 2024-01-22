@@ -1,9 +1,10 @@
 import Head from "next/head";
 import axios from "axios";
+import Image from "next/image";
 
-export default function Home(props) {
-  console.log("ssg", props);
-
+export default function Home({ meals }) {
+  console.log("ssg", meals);
+  const mealsData = meals.slice(0, 5);
   return (
     <>
       <Head>
@@ -12,6 +13,20 @@ export default function Home(props) {
 
       <main>
         <h1>Main page</h1>
+        {mealsData.map((item) => {
+          return (
+            <div key={item.idMeal}>
+              <Image
+                src={item.strMealThumb}
+                alt={item.strMeal}
+                priority
+                width={100}
+                height={100}
+              />
+              <h2>{item.strMeal}</h2>
+            </div>
+          );
+        })}
       </main>
     </>
   );
