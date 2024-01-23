@@ -8,7 +8,7 @@ import Text from "../text/Text";
     tr(반복) > td(no), td(name), td(age), td(address)
 */
 
-export default function Table({
+export function TableY({
   data,
   title,
   className,
@@ -38,7 +38,35 @@ export default function Table({
         <tbody>
           {data.map((el, idx) => (
             <tr key={idx}>
-              {isCount && <td>{reverse ? data.length - idx : idx + 1}</td>}
+              {isCount && <th>{reverse ? data.length - idx : idx + 1}</th>}
+              {Object.values(el).map((val, idx) => (
+                <td key={idx}>{val}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  );
+}
+
+export function TableX({ data, title, className, reverse = false }) {
+  const keys = Object.keys(data[0]);
+  console.log(keys);
+
+  return (
+    <>
+      {title && (
+        <Text tagName={"h1"} styleType={"title1"}>
+          {title}
+        </Text>
+      )}
+
+      <table border="1">
+        <tbody>
+          {data.map((el, idx) => (
+            <tr key={idx}>
+              <th>{keys[idx]}</th>
               {Object.values(el).map((val, idx) => (
                 <td key={idx}>{val}</td>
               ))}
