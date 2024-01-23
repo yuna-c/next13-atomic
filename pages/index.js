@@ -33,7 +33,7 @@ export default function Home({ meals }) {
 
         <Text styleType={"slogan"}>Slogan</Text>
         <Text styleType={"slogan"} className={clsx(styles.customTit, styles.a)}>
-          {/* className={clsx(styles.customTit)} 프롭스 */}
+          {/* className={clsx(styles.customTit)} 프롭스 암호화 값으로전달 */}
           Slogan2
         </Text>
       </main>
