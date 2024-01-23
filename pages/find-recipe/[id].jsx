@@ -16,7 +16,7 @@ export default function Detail() {
 
   const title = Object.keys(recipe)[0];
   const data = Object.values(recipe)[0];
-  console.log("title", title);
+  // console.log("title", title);
   console.log("data", data);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Detail() {
 
   return (
     <section>
-      <TableY data={data} title={title} isCount reverse />
+      {/* <TableY data={data} title={title} isCount reverse /> */}
       <TableX data={data} title={title} isCount reverse />
     </section>
   );
