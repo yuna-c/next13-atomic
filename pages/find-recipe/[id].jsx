@@ -1,6 +1,7 @@
 import Table from "@/components/atoms/table/Table";
 import axios from "axios";
 import { useState, useEffect } from "react";
+// http://localhost:3000/find-recipe/detail
 
 export default function Detail() {
   const [Recipe, setRecipe] = useState(null);
