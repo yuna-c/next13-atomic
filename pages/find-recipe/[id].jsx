@@ -27,7 +27,7 @@ export default function Detail() {
 
   return (
     <section>
-      <Table data={data} title={title} />
+      <Table data={data} title={title} isCount reverse />
     </section>
   );
 }

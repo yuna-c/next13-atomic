@@ -8,7 +8,13 @@ import Text from "../text/Text";
     tr(반복) > td(no), td(name), td(age), td(address)
 */
 
-export default function Table({ data, title, className }) {
+export default function Table({
+  data,
+  title,
+  className,
+  isCount = false,
+  reverse = false,
+}) {
   return (
     <>
       {title && (
@@ -20,6 +26,7 @@ export default function Table({ data, title, className }) {
       <table className={clsx(styles.table, className)} border="1">
         <thead>
           <tr>
+            {isCount && <th scope="column">No</th>}
             {Object.keys(data[0]).map((key) => (
               <th key={key}>{key}</th>
             ))}
@@ -28,6 +35,7 @@ export default function Table({ data, title, className }) {
         <tbody>
           {data.map((el, idx) => (
             <tr key={idx}>
+              {isCount && <td>{reverse ? data.length - idx : idx + 1}</td>}
               {Object.values(el).map((val, idx) => (
                 <td key={idx}>{val}</td>
               ))}
