@@ -2,9 +2,10 @@ import clsx from "clsx";
 import styles from "./breadcrumb.module.scss";
 import Text from "@/components/atoms/text/Text";
 import React from "react";
+import { useRouter } from "next/router";
 
-export default function Breadcrumb({ path }) {
-  const pathArr = path.split("/");
+export default function Breadcrumb() {
+  const pathArr = useRouter().asPath.split("/");
 
   return (
     <nav className={clsx(styles.breadcrumb)}>
