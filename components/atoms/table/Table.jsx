@@ -15,6 +15,9 @@ export default function Table({
   isCount = false,
   reverse = false,
 }) {
+  console.log(data);
+  data = reverse ? [...data].reverse() : [...data];
+
   return (
     <>
       {title && (
