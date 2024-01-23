@@ -20,7 +20,7 @@ export default function Breadcrumb() {
   return (
     <nav className={clsx(styles.breadcrumb)}>
       {pathArr.map((name, idx) => {
-        //displayName = 화면에 출력용도로만 활용되는 텍스트 (해당 값을 로직을 연산하는 부분에 활용금지)
+        //displayName = 화면에 출력용도로만 활용되는 텍스트 (해당 값을 로직을 연산하는 부분에 활용금지)!!
         const displayName = customText(name, "-");
         if (idx === pathArr.length - 1) {
           return (
