@@ -2,7 +2,7 @@
   color: #777;
   font-family: var(--font-nanum);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.5rem;
 
   a {
     font-size: inherit;
@@ -12,7 +12,8 @@
   }
 
   &.on {
-    color: rosybrown;
+    color: #f09e9e;
+    font-weight: 900;
   }
 
   &.logo {
