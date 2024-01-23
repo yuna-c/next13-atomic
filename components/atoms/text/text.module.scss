@@ -11,6 +11,10 @@
     color: inherit;
   }
 
+  &.on {
+    color: rosybrown;
+  }
+
   &.logo {
     font-family: var(--font-orbitron);
     font-weight: 600;

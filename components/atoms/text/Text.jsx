@@ -24,6 +24,7 @@ export default function Text({
   tagName = "p",
   styleType,
   className,
+  isOn = false,
 }) {
   return React.createElement(
     tagName,
@@ -33,7 +34,8 @@ export default function Text({
         nanum.variable,
         orbitron.variable,
         styles[styleType],
-        className
+        className,
+        isOn && styles.on
       ),
     },
     url ? React.createElement(Link, { href: url }, children) : children
