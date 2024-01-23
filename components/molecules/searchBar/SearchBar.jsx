@@ -1,12 +1,15 @@
 import clsx from 'clsx';
 import styles from './searchBar.module.scss';
 import Input from '@/components/atoms/input/Input';
+import { RiSearchLine } from 'react-icons/ri';
 
-export default function SearchBar({ value }) {
+export default function SearchBar({ value, onChange, className, placeholder }) {
 	return (
-		<section className={clsx(styles.searchBar)}>
-			<h1>SearchBar</h1>
-			<Input value={value} />
-		</section>
+		<div className={clsx(styles.searchBar, className)}>
+			<Input value={value} onChange={onChange} placeholder={placeholder} />
+			<button>
+				<RiSearchLine />
+			</button>
+		</div>
 	);
 }

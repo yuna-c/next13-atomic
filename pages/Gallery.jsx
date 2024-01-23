@@ -1,9 +1,12 @@
-import Navbar from "@/components/molecules/navbar/Navbar";
+import SearchBar from '@/components/molecules/searchBar/SearchBar';
+import { useState } from 'react';
 
 export default function Pages() {
-  return (
-    <section>
-      <Navbar data={["Find Recipe", "Gallery", "About"]} />
-    </section>
-  );
+	const [Val, setVal] = useState('');
+
+	return (
+		<section>
+			<SearchBar value={Val} onChange={setVal} />
+		</section>
+	);
 }
