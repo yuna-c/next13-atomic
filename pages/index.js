@@ -17,16 +17,19 @@ export default function Home({ meals }) {
 
       <main className={clsx(styles.main)}>
         <h1>Main page</h1>
-        <Text tagName={"h1"}>Hello</Text>
-        <Text tagName={"p"}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          fugiat tenetur, voluptate quia nulla distinctio quaerat aliquam
-          eligendi blanditiis repellendus placeat atque, veritatis optio culpa
-          ducimus, magni quo dolorum itaque!
+        <Text url={"/"} tagName={"h1"} styleType={"logo"}>
+          blabla
         </Text>
-        <Text>안녕하세요.</Text>
-        <Text tagName={"h3"} url={"/gallery"}>
-          갤러리 ㄱㄱ
+
+        <Text tagName={"h2"} styleType={"title1"}>
+          blabla comes here
+        </Text>
+
+        <Text styleType={"slogan"}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sed
+          voluptatem illo nam eum excepturi totam optio vero! Deleniti tenetur
+          obcaecati labore nisi saepe maiores eveniet commodi perspiciatis
+          deserunt dolore.
         </Text>
       </main>
     </>
