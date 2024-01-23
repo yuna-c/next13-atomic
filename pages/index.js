@@ -25,7 +25,7 @@ export default function Home({ meals }) {
 
       <main className={styles.main}>
         <List data={topRated} tagName={"ol"} divider={"-"} url={url} />
-        <Input value={Val} onChange={setVal} />
+        <Input value={Val} onChange={setVal} type={"password"} />
       </main>
     </>
   );
