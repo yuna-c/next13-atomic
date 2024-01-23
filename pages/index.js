@@ -2,34 +2,39 @@ import Head from "next/head";
 import axios from "axios";
 import Image from "next/image";
 import Pic from "@/components/atoms/pic/Pic";
-import styles from "./Home.module.scss";
 import clsx from "clsx";
 import Text from "@/components/atoms/text/Text";
+import styles from "./Home.module.scss";
 
 export default function Home({ meals }) {
   console.log("ssg", meals);
   const mealsData = meals.slice(0, 5);
+
   return (
     <>
       <Head>
         <title>Main Page</title>
       </Head>
 
-      <main className={clsx(styles.main)}>
-        <h1>Main page</h1>
-        <Text url={"/"} tagName={"h1"} styleType={"logo"}>
-          blabla
+      <main className={styles.main}>
+        {/* <Text url={"/"} tagName={"h1"} styleType={"logo"}>
+          DCODELAB
         </Text>
 
         <Text tagName={"h2"} styleType={"title1"}>
-          blabla comes here
+          Title comes here.
         </Text>
 
-        <Text styleType={"slogan"}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sed
-          voluptatem illo nam eum excepturi totam optio vero! Deleniti tenetur
-          obcaecati labore nisi saepe maiores eveniet commodi perspiciatis
-          deserunt dolore.
+        <Text>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque fugit
+          vero voluptate accusamus magni cum sit perspiciatis quisquam officia
+          sed.
+        </Text> */}
+
+        <Text styleType={"slogan"}>Slogan</Text>
+        <Text styleType={"slogan"} className={clsx(styles.customTit, styles.a)}>
+          {/* className={clsx(styles.customTit)} 프롭스 */}
+          Slogan2
         </Text>
       </main>
     </>
