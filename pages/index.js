@@ -6,12 +6,17 @@ import clsx from "clsx";
 import Text from "@/components/atoms/text/Text";
 import styles from "./Home.module.scss";
 import List from "@/components/atoms/list/List";
+import Input from "@/components/atoms/input/Input";
+import { useState } from "react";
 
 export default function Home({ meals }) {
   console.log("ssg", meals);
   const mealsData = meals.slice(0, 5);
   const topRated = ["Avartar", "Emma", "AquaMan"];
   const url = ["/", "/gallery", "/about"];
+  const [Val, setVal] = useState("");
+  console.log(Val);
+
   return (
     <>
       <Head>
@@ -20,6 +25,7 @@ export default function Home({ meals }) {
 
       <main className={styles.main}>
         <List data={topRated} tagName={"ol"} divider={"-"} url={url} />
+        <Input value={Val} onChange={setVal} />
       </main>
     </>
   );
