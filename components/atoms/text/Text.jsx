@@ -19,7 +19,7 @@ const orbitron = Orbitron({
 });
 //Text컴포넌트 입장에서 부모로부터 이벤트핸들러 전달시 (순서, fetchingData, e)
 //위의 값3가지를 비구조할당을 전달 (없으면 그만, 있으면 활용)
-export default function Text({ children, url, tagName = 'p', styleType, className, isOn = false, onClick }) {
+export default function Text({ children, url, tagName = 'p', styleType, className, isOn, onClick }) {
 	return React.createElement(
 		tagName,
 		{
