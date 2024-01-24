@@ -1,36 +1,36 @@
 .text {
-  color: #777;
-  font-family: var(--font-nanum);
-  font-weight: 400;
-  font-size: 1.5rem;
+	color: #777;
+	font-family: var(--font-nanum);
+	font-weight: 400;
+	font-size: 1.5rem;
 
-  a {
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    color: inherit;
-  }
+	a {
+		font-size: inherit;
+		font-family: inherit;
+		font-weight: inherit;
+		color: inherit;
+	}
 
-  &.on {
-    color: #f09e9e;
-    font-weight: 900;
-  }
+	&.on {
+		color: #f09e9e;
+		font-weight: 900;
+	}
 
-  &.logo {
-    font-family: var(--font-orbitron);
-    font-weight: 600;
-    color: #111;
-    font-size: 1.8rem;
-  }
+	&.logo {
+		font-family: var(--font-orbitron);
+		font-weight: 600;
+		color: #111;
+		font-size: 1.8rem;
+	}
 
-  &.title1 {
-    color: green;
-    font-size: 1.2rem;
-  }
+	&.title1 {
+		color: green;
+		font-size: 1.2rem;
+	}
 
-  &.slogan {
-    color: hotpink;
-    font-size: 20vw;
-    font-weight: 900;
-  }
+	&.slogan {
+		color: hotpink;
+		font-size: 20vw;
+		font-weight: 900;
+	}
 }
