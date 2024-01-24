@@ -1,4 +1,8 @@
+import Navbar from '@/components/molecules/navbar/Navbar';
 import Category from '@/components/molecules/category/Category';
+import clsx from 'clsx';
+
+import styles from './gallery.module.scss';
 import { useState } from 'react';
 
 export default function Pages() {
@@ -22,7 +26,9 @@ export default function Pages() {
 		setSelected(activeEl);
 	};
 	return (
-		<section>
+		<section className={clsx(styles.gallery)}>
+			<Navbar data={['Find Recipe', 'Gallery', 'About']} />
+			<p>집 언제가누</p>
 			{/* 무조건 전체배열 데이터와 현재 활성화 데이터를 같이 전달, 카테고리 컴포넌트 내부적으로 클릭이벤트가 일어나면 클릭요소순번의 데이터를 부모에 있는 state에 옮겨담아주는 핸들러함수 같이 전달 */}
 			{/* dataArr에는 무조건 배열이 들어가는데 배열의 각 구성요소가 문자일수도 있고 객체일수도 있음 */}
 			{/* 배열의 구성요소가 문자가 아닌 객체일때는 메뉴명으로 활용못하기 때문에 nameArr에 문자로 구성된 배열을 직접전달 */}
