@@ -6,8 +6,8 @@ export default function Pages() {
 	// 	{ name: 'David', age: 20 },
 	// 	{ name: 'Emily', age: 30 },
 	// 	{ name: 'Paul', age: 40 }
-	// ];
-	const dataArr = ['David', 'Emily', 'Paul', '아 집가고싶누'];
+	// ]; 객체일 때 nameArr O
+	const dataArr = ['David', 'Emily', 'Paul', '아 집가고싶누']; // 배열일 때 nameArr X
 	const nameArr = dataArr.map(data => data.name);
 	//Category내부적으로 isOn값을 담기 위해서 데이터를 비교하기 위해서는 모두 State에 담겨있는 자료여야 하기 때문
 	//전달할 전체 배열, 선택된 값모두 state에 담긴값으로 Category에 전달

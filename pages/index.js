@@ -8,6 +8,7 @@ import styles from './Home.module.scss';
 import List from '@/components/atoms/list/List';
 import Input from '@/components/atoms/input/Input';
 import { useState } from 'react';
+import { TableX, TableY } from '@/components/atoms/table/Table';
 
 export default function Home({ meals }) {
 	console.log('ssg', meals);
@@ -17,13 +18,23 @@ export default function Home({ meals }) {
 	const [Val, setVal] = useState('');
 	console.log(Val);
 
+	const data = [
+		{ name: 'David', age: 20, address: '서울' },
+		{ name: 'Emily', age: 30, address: '부산' },
+		{ name: 'Paul', age: 40, address: '강원' },
+		{ name: '집', age: 100, address: '내집' }
+	];
 	return (
 		<>
 			<Head>
 				<title>Main Page</title>
 			</Head>
 
-			<main className={styles.main}>이게모야?</main>
+			<main className={styles.main}>
+				이개모야?
+				<TableX data={data}></TableX>
+				<TableY data={data}></TableY>
+			</main>
 		</>
 	);
 }
