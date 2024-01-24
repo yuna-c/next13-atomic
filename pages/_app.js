@@ -1,6 +1,7 @@
 import axios from 'axios';
 import '@/styles/globals.scss';
 import '@/styles/Theme.scss';
+import Layout from '@/components/template/layout/Layout';
 import { GlobalProvider } from '@/hooks/useGlobalContext';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -12,9 +13,9 @@ export default function App({ Component, pageProps }) {
 	return (
 		<GlobalProvider>
 			<QueryClientProvider client={queryClient}>
-				<div>
+				<Layout>
 					<Component {...pageProps} />
-				</div>
+				</Layout>
 				<ReactQueryDevtools />
 			</QueryClientProvider>
 		</GlobalProvider>
