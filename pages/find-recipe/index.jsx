@@ -3,13 +3,17 @@ import axios from 'axios';
 import styles from './find-recipe.module.scss';
 import Category from '@/components/molecules/category/Category';
 import { useState } from 'react';
+import { useRecipeByCategory } from '@/hooks/useRecipe';
+import Card from '@/components/molecules/card/Card';
 
 export default function FindRecipe({ categories }) {
-	console.log(categories);
+	// console.log(categories);
 
 	const [Names, setNames] = useState(categories.map(el => el.strCategory));
 	const [Selected, setSelected] = useState(categories[0].strCategory);
-	console.log(Selected);
+	// console.log(Selected);
+	const { data: dataByCategory, isSuccess } = useRecipeByCategory(Selected, '');
+	console.log(dataByCategory);
 
 	const handleClick = activeEl => {
 		setSelected(activeEl);
@@ -19,11 +23,18 @@ export default function FindRecipe({ categories }) {
 		<section className={clsx(styles.findRecipe)}>
 			<h1>Find Recipe</h1>
 			<Category dataArr={Names} selectedEl={Selected} onClick={handleClick} className={clsx(styles.category)} />
+			<h2>{isSuccess && Selected}</h2>
+
+			{isSuccess &&
+				dataByCategory.map(data => {
+					return <Card key={data.idMeal} imgSrc={data.strMealThumb} txt={data.strMeal} className={clsx(styles.foodItem)} />;
+				})}
 		</section>
 	);
 }
 
 //ssg
+//csr로 변경 해야함 그래서 리액트 쿼리로
 export async function getStaticProps() {
 	const { data } = await axios.get(`/categories.php`);
 	return {
