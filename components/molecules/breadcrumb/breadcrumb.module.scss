@@ -4,10 +4,16 @@
 	margin: 0px auto;
 	gap: 10px;
 	justify-content: flex-end;
-	opacity: 0.8;
+	margin-bottom: 20px;
 
 	span {
 		transform: scale(0.7);
 		opacity: 0.5;
+	}
+}
+
+@media screen and (max-width: $tabletS) {
+	.breadcrumb {
+		justify-content: flex-start;
 	}
 }
