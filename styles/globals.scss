@@ -1,7 +1,14 @@
+:root {
+	--text: #fff;
+	--textCode: 255, 255, 255;
+	--point: #f09e9e;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: var(--text);
 }
 ul,
 ol,

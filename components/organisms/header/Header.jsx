@@ -7,7 +7,7 @@ export default function Header() {
 	return (
 		<header className={clsx(styles.header)}>
 			<Text url={'/'} styleType={'logo'}>
-				DCODELAB
+				NEXT.ATOMIC
 			</Text>
 
 			<Navbar data={['Find Recipe', 'My Favorait']} />

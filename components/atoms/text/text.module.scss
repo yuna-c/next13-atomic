@@ -1,36 +1,39 @@
 .text {
-	color: #777;
 	font-family: var(--font-nanum);
 	font-weight: 400;
-	font-size: 1.5rem;
+	font-size: 1rem;
 
-	a {
-		font-size: inherit;
-		font-family: inherit;
-		font-weight: inherit;
-		color: inherit;
+	&:hover {
+		color: var(--point);
 	}
 
 	&.on {
-		color: #f09e9e;
-		font-weight: 900;
+		color: var(--point);
+	}
+
+	a {
+		font-size: inherit;
+		color: inherit;
+		font-family: inherit;
+		font-weight: inherit;
+
+		&:hover {
+			color: var(--point);
+		}
 	}
 
 	&.logo {
 		font-family: var(--font-orbitron);
 		font-weight: 600;
-		color: #111;
 		font-size: 1.8rem;
 	}
 
 	&.title1 {
-		color: green;
 		font-size: 1.2rem;
 	}
 
 	&.slogan {
-		color: hotpink;
+		color: var(--point);
 		font-size: 20vw;
-		font-weight: 900;
 	}
 }

@@ -1,7 +1,7 @@
 .list {
-  li {
-    &.on {
-      color: hotpink;
-    }
-  }
+	li {
+		&.on {
+			color: var(--point);
+		}
+	}
 }
