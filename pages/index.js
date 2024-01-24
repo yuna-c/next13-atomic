@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Head from 'next/head';
+import Image from 'next/image';
 import styles from './Home.module.scss';
 
 export default function Home({ meals, category }) {
@@ -13,6 +14,17 @@ export default function Home({ meals, category }) {
 
 			<main className={styles.main}>
 				<h1>메인 어서오고메인 어서오고</h1>
+				<h2>{category}</h2>
+
+				{meals.map((data, idx) => {
+					if (idx > 5) return null;
+					return (
+						<article key={idx}>
+							<Image src={data.strMealThumb} alt={data.strMeal} width={100} height={100} priority />
+							<h3>{data.strMeal}</h3>
+						</article>
+					);
+				})}
 			</main>
 		</>
 	);
