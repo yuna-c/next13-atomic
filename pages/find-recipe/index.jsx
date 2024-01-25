@@ -28,7 +28,8 @@ export default function FindRecipe({ categories }) {
 							imgSrc={data.strMealThumb}
 							txt={data.strMeal}
 							className={clsx(styles.foodItem)}
-							url={`/find-recipe/${data.idMeal}`}
+							// url={`/find-recipe/${data.idMeal}`}
+							url={`/find-recipe/${data.idMeal}?name=${data.strMeal}`}
 						/>
 					);
 				})}
