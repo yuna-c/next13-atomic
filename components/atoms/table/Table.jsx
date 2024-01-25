@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import styles from './table.module.scss';
 import Text from '../text/Text';
 
-// useEffec로
 /*
 [
 	{ name: 'ingredient', ingredient: '재료명', measure: '측량' },
@@ -24,7 +23,7 @@ export function TableY({ data, title, className, isCount = false, reverse = fals
 				<thead>
 					<tr>
 						{isCount && <th scope='col'>No</th>}
-						{Object.keys(data[0]).map(key => (
+						{Object.keys(data[0] || {}).map(key => (
 							<th key={key}>{key}</th>
 						))}
 					</tr>
