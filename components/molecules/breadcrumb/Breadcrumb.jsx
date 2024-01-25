@@ -11,7 +11,7 @@ export default function Breadcrumb({ divider = '/' }) {
 	const pathArr = router.asPath.split('/');
 	//path값에서 만약 쿼리스트링값이 있으면 쿼리의 name값만 따로 추출해서 이름 recieName에 담아줌
 	const { name: recipeName } = router.query;
-	console.log(recipeName);
+	// console.log(recipeName);
 
 	const customText = (txt, spc) => {
 		txt = txt.includes(spc)

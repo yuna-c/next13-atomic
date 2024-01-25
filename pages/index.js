@@ -4,8 +4,8 @@ import Image from 'next/image';
 import styles from './Home.module.scss';
 
 export default function Home({ meals, category }) {
-	console.log('meals', meals);
-	console.log('category', category);
+	// console.log('meals', meals);
+	// console.log('category', category);
 	return (
 		<>
 			<Head>

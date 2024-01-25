@@ -17,7 +17,7 @@ export default function Detail() {
 	const router = useRouter();
 	const { id } = router.query;
 	const { data, isSuccess } = useRecipeById(id);
-	console.log(data);
+	// console.log(data);
 	// console.log(router.query);
 
 	//즐겨찾기 버튼 토글시 로컬저장소에 params로 들어온 레시피 아이디값을 저장해주는 함수
@@ -53,7 +53,7 @@ export default function Detail() {
 	useEffect(() => {
 		if (data) {
 			let keys = Object.keys(data); //객체
-			console.log(keys);
+			// console.log(keys);
 			keys = keys.filter(key => key.startsWith('strIngredient')); //strIngredient로 시작하는 키값만 뽑아냄
 			keys = keys.filter(key => data[key] !== '' && data[key] !== null); //뽑아낸 키값에서 value값이 비어있지 않는값만 다시 추출
 
@@ -81,7 +81,7 @@ export default function Detail() {
 				.split('\r\n') //기존문자열에서 \r\n를 구분자로 문자열을 배열로 나눔
 				.map(txt => (txt.includes('.\t') ? txt.split('.\t')[1] : txt)) //나눈 문자안에서 .\t포함되어 있다면 해당 기호를 뺴고 분리
 				.filter(txt => txt !== ''); //분리된 배열에서 혹시 빈문자열이 있으면 배열에서 제거
-			console.log(instructions);
+			// console.log(instructions);
 			setListData(instructions);
 		}
 	}, [data]);
