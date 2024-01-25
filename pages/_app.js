@@ -5,6 +5,8 @@ import Layout from '@/components/template/layout/Layout';
 import { GlobalProvider } from '@/hooks/useGlobalContext';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { keepStyle } from '@/libs/keepStyle';
+keepStyle(3000);
 
 axios.defaults.baseURL = 'https://www.themealdb.com/api/json/v1/1';
 const queryClient = new QueryClient();
