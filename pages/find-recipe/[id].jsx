@@ -7,6 +7,7 @@ import Breadcrumb from '@/components/molecules/breadcrumb/Breadcrumb';
 import { useEffect, useState } from 'react';
 import { TableX, TableY } from '@/components/atoms/table/Table';
 import List from '@/components/atoms/list/List';
+import Text from '@/components/atoms/text/Text';
 
 export default function Detail() {
 	const [TableData, setTableData] = useState([]);
@@ -68,7 +69,13 @@ export default function Detail() {
 			{/* <Breadcrumb divider={'>'} /> */}
 			{isSuccess && (
 				<>
-					<h1>{data.strMeal}</h1>
+					<div className={clsx(styles.upper)}>
+						<h1>{data.strMeal}</h1>
+						<Text styleType={'button'} className={styles.btnFavoraite}>
+							{' '}
+							Add To my favorite
+						</Text>
+					</div>
 					<div className={clsx(styles.picFrame)}>
 						<Pic imgSrc={data.strMealThumb} />
 					</div>
