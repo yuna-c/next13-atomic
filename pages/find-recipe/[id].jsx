@@ -30,7 +30,7 @@ export default function Detail() {
 			setSaved(true);
 		} else {
 			//배열.splice(삭제할배열의 순번위치, 삭제할 갯수)
-			savedRecipe.splice(savedRecipe.indexOf(data.isMeal), 1);
+			savedRecipe.splice(savedRecipe.indexOf(data.idMeal), 1);
 			localStorage.setItem('favoraite', JSON.stringify(savedRecipe));
 			setSaved(false);
 		}

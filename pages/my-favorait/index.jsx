@@ -28,6 +28,7 @@ export default function MyFavoraite() {
 							className={styles.favoraitCard}
 							url={`/find-recipe/${data.idMeal}?name=${data.strMeal}`}
 							// ?name 쿼리스트링 방식
+							styleType={'horizontal'}
 						/>
 					);
 				}
