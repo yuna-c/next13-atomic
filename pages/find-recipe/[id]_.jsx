@@ -17,7 +17,7 @@ export default function Detail() {
 	const title = Object.keys(recipe)[0];
 	const data = Object.values(recipe)[0];
 	// console.log("title", title);
-	console.log('data', data);
+	// console.log('data', data);s
 
 	useEffect(() => {
 		axios.get('/search.php?s=Arrabiata').then(json => {
