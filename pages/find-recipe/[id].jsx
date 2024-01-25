@@ -13,8 +13,10 @@ export default function Detail() {
 	const router = useRouter();
 	const { id } = router.query;
 	const { data, isSuccess } = useRecipeById(id);
-	// console.log(data);
+	console.log(data);
 	// console.log(router.query);
+
+	const [ListData, setListData] = useState([]);
 
 	// useEffec로
 	/*
@@ -27,7 +29,7 @@ export default function Detail() {
 
 	useEffect(() => {
 		if (data) {
-			let keys = Object.keys(data);
+			let keys = Object.keys(data); //객체
 			console.log(keys);
 			keys = keys.filter(key => key.startsWith('strIngredient')); //strIngredient로 시작하는 키값만 뽑아냄
 			keys = keys.filter(key => data[key] !== '' && data[key] !== null); //뽑아낸 키값에서 value값이 비어있지 않는값만 다시 추출
@@ -47,6 +49,10 @@ export default function Detail() {
 			// });
 
 			setTableData(ingredients);
+
+			const instructions = data.strInstructions.split('\r\n');
+			console.log(instructions);
+			setListData(instructions);
 		}
 	}, [data]);
 
@@ -61,7 +67,7 @@ export default function Detail() {
 					</div>
 
 					<TableY data={TableData} title={'Ingredients'} className={clsx(styles.detailTable)} />
-					{/* <List /> */}
+					<List data={ListData} tagName={'ol'} className={clsx(styles.detailList)} />
 				</>
 			)}
 		</section>
