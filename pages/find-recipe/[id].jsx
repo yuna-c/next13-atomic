@@ -50,7 +50,14 @@ export default function Detail() {
 
 			setTableData(ingredients);
 
-			const instructions = data.strInstructions.split('\r\n');
+			// const instructions = data.strInstructions.split('\r\n').filter(txt => txt !== '');
+			//Apam balik  .split('\r\n').filter(txt => txt !== '') 빈문자열 제거 4 : '' 빈값
+			//Beef Asado  .map(txt => (txt.includes('.\t') ? txt.split('.\t')[1] : txt)) 0. 제거
+
+			const instructions = data.strInstructions
+				.split('\r\n') //기존문자열에서 \r\n를 구분자로 문자열을 배열로 나눔
+				.map(txt => (txt.includes('.\t') ? txt.split('.\t')[1] : txt)) //나눈 문자안에서 .\t포함되어 있다면 해당 기호를 뺴고 분리
+				.filter(txt => txt !== ''); //분리된 배열에서 혹시 빈문자열이 있으면 배열에서 제거
 			console.log(instructions);
 			setListData(instructions);
 		}
@@ -67,7 +74,7 @@ export default function Detail() {
 					</div>
 
 					<TableY data={TableData} title={'Ingredients'} className={clsx(styles.detailTable)} />
-					<List data={ListData} tagName={'ol'} className={clsx(styles.detailList)} />
+					<List data={ListData} tagName={'ol'} className={clsx(styles.detailList)} divider={'❣'} />
 				</>
 			)}
 		</section>
