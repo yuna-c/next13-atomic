@@ -20,11 +20,29 @@ export default function Detail() {
 	console.log(data);
 	// console.log(router.query);
 
+	//즐겨찾기 버튼 토글시 로컬저장소에 params로 들어온 레시피 아이디값을 저장해주는 함수
 	const handleSave = () => {
-		setSaved(!Saved);
+		const savedRecipe = JSON.parse(localStorage.getItem('favoraite')) || [];
+
+		if (!Saved) {
+			savedRecipe.push(data.idMeal);
+			localStorage.setItem('favoraite', JSON.stringify(savedRecipe));
+			setSaved(true);
+		} else {
+			//배열.splice(삭제할배열의 순번위치, 삭제할 갯수)
+			savedRecipe.splice(savedRecipe.indexOf(data.isMeal), 1);
+			localStorage.setItem('favoraite', JSON.stringify(savedRecipe));
+			setSaved(false);
+		}
 	};
-	// useEffec로
-	/*
+
+	//사용자 이벤트가 아닌 해당 페이지컴포넌트가 마운트시 로컬저장소의 값을 비교해서 즐겨찾기버튼 상태변경
+	useEffect(() => {
+		const savedRecipe = JSON.parse(localStorage.getItem('favoraite')) || [];
+		savedRecipe.includes(id) ? setSaved(true) : setSaved(false);
+	}, [id]);
+
+	/*// useEffec로
 	[
 		{ name: 'ingredient', ingredient: '재료명', measure: '측량' },
 		{ name: 'ingredient', ingredient: '재료명', measure: '측량' },

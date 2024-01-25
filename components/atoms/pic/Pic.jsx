@@ -4,10 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { HashLoader } from 'react-spinners';
 import { useState } from 'react';
-// npm install react-spinners
+//npm i react-spinners
 
 export default function Pic({ imgSrc, imgTxt, url }) {
-	// console.log(imgTxt);
 	const [IsLoaded, setIsLoaded] = useState(false);
 
 	return (
