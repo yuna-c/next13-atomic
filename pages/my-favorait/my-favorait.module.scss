@@ -10,5 +10,13 @@
 
 	.favoraitCard {
 		width: 30%;
+
+		p {
+			a {
+				display: inline-flex;
+				height: 100%;
+				width: 100%;
+			}
+		}
 	}
 }

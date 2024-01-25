@@ -1,13 +1,13 @@
 import Pic from '@/components/atoms/pic/Pic';
 import { useRecipeById } from '@/hooks/useRecipe';
 import { useRouter } from 'next/router';
-import styles from './detail.module.scss';
 import clsx from 'clsx';
 import Breadcrumb from '@/components/molecules/breadcrumb/Breadcrumb';
 import { useEffect, useState } from 'react';
 import { TableX, TableY } from '@/components/atoms/table/Table';
 import List from '@/components/atoms/list/List';
 import Text from '@/components/atoms/text/Text';
+import styles from './detail.module.scss';
 
 export default function Detail() {
 	const [TableData, setTableData] = useState([]);

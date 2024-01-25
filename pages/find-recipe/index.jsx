@@ -33,7 +33,7 @@ export default function FindRecipe({ categories }) {
 			setSearch('');
 			setSelected(categories[0].strCategory);
 		}
-	}, [Search]);
+	}, [Search, categories]);
 
 	return (
 		<section className={clsx(styles.findRecipe)}>
