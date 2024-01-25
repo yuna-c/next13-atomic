@@ -4,13 +4,29 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 
-	.category {
+	.controller {
 		width: 100%;
-		margin-bottom: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.category {
+			margin-bottom: 20px;
+		}
+		.searchBox {
+			margin-bottom: 20px;
+			button {
+				font-size: 1rem;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
 	}
 
 	.foodItem {
-		width: 22%;
+		width: 23%;
 		margin-bottom: 120px;
 	}
 }

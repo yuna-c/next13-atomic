@@ -1,4 +1,14 @@
 .searchBar {
+	// height: 70px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	position: relative;
+
+	input {
+		width: 80px;
+	}
+
 	button {
 		border: none;
 		background: transparent;
