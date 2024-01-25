@@ -5,14 +5,14 @@ export const useThemeColor = () => {
 
 	const ThemeColors = {
 		theme1: {
-			point: 'orange',
+			point: 'orange'
 		},
 		theme2: {
-			point: 'aqua',
+			point: 'aqua'
 		},
 		theme3: {
-			point: 'hotpink',
-		},
+			point: 'rosybrown'
+		}
 	};
 
 	return ThemeColors[Theme];
