@@ -42,7 +42,7 @@ export function TableY({ data, title, className, isCount = false, reverse = fals
 		</>
 	);
 }
-export function TableX({ data, title, className, reverse = false }) {
+export function TableX({ data, title, className, isCount = false, reverse = false }) {
 	data = reverse ? [...data].reverse() : [...data];
 	const keys = Object.keys(data[0]); //['name','age']
 
@@ -53,6 +53,7 @@ export function TableX({ data, title, className, reverse = false }) {
 					{title}
 				</Text>
 			)}
+			{/* {Object.keys(data[0] || {}).map(key => ( */}
 
 			<table border='1' className={clsx(styles.table, className)}>
 				<tbody>
